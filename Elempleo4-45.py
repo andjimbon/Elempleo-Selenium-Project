@@ -22,25 +22,25 @@ puestos, cia, rango_salario, publicacion, links =[], [], [], [], []
 
 while True:
 
-    # Nombre del Puesto
+    # Job name
     jobs = []
     for i in soup.select('.text-ellipsis'):
         jobs.append(i.text)
     items = [item.strip() for item in jobs if str(item)]
 
-    # Empresa
+    # Company
     company = []
     for i in soup.select('.info-company-name'):
         company.append(i.text)
     empresa = [item.strip() for item in company if str(item)]
 
-    # Salario
+    # Salary
     salary = []
     for i in soup.select('.info-salary'):
         salary.append(i.text)
     rango_sal = [item.strip() for item in salary if str(item)]
 
-    # Publicacion
+    # Item
     publish = []
     for i in soup.find_all("span", class_='info-publish-date pull-right'):
         publish.append(i.text)
@@ -72,25 +72,25 @@ while True:
 driver.find_element_by_xpath(("//li[@class=' disabled ']/a[@class='js-btn-next']")).send_keys(Keys.ENTER)
 time.sleep(1.5)
 
-# Nombre del Puesto
+# Job Name
 jobs = []
 for i in soup.select('.text-ellipsis'):
     jobs.append(i.text)
 puesto_last_page = [item.strip() for item in jobs if str(item)]
 
-# Empresa
+# Company
 company = []
 for i in soup.select('.info-company-name'):
     company.append(i.text)
 empresa_last_page = [item.strip() for item in company if str(item)]
 
-# Salario
+# Salary
 salary = []
 for i in soup.select('.info-salary'):
     salary.append(i.text)
 rango_sal_last_page = [item.strip() for item in salary if str(item)]
 
-# Publicacion
+# item
 publish = []
 for i in soup.find_all("span", class_='info-publish-date pull-right'):
     publish.append(i.text)
