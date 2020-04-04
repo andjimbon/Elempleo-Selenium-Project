@@ -195,4 +195,4 @@ df.Publicado = df.Publicado.str.replace(r'Publicado ', '')
 
 # Exporting
 
-df.to_csv(r'C:\Users\AndyJ\Desktop\Rs_Project\4-45.csv', index=False)
+df.to_csv(r'C:\your_path\4-45.csv', index=False)
